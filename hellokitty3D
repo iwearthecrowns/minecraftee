@@ -1,0 +1,46 @@
+player.onChat("run", function () {
+    jumper()
+    feet()
+    tail()
+})
+function feet () {
+    blocks.fill(
+    Block.Wool,
+    positions.create(0, 0, 1),
+    positions.create(-3, 5, 6),
+    FillOperation.Replace
+    )
+    blocks.fill(
+    Block.Wool,
+    positions.create(0, 0, 9),
+    positions.create(-3, 5, 14),
+    FillOperation.Replace
+    )
+}
+function jumper () {
+    blocks.fill(
+    Block.LapisLazuliBlock,
+    positions.create(1, 0, 1),
+    positions.create(12, 6, 14),
+    FillOperation.Replace
+    )
+}
+player.onChat("home", function () {
+    player.teleport(positions.createWorld(29, 69, -538))
+})
+player.onChat("break", function () {
+    blocks.fill(
+    Block.Air,
+    positions.create(0, 0, 0),
+    positions.create(12, 0, 14),
+    FillOperation.Replace
+    )
+})
+function tail () {
+    blocks.fill(
+    Block.Wool,
+    positions.create(13, 0, 6),
+    positions.create(15, 2, 9),
+    FillOperation.Replace
+    )
+}
